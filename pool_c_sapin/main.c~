@@ -1,0 +1,11 @@
+#include <unistd.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include "proto.h"
+
+
+int main (int argc, char* argv[])
+{
+  tree (1);
+  return (0);
+}

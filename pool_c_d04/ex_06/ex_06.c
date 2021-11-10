@@ -1,0 +1,43 @@
+#include <unistd.h>
+my_show_array(char **tab, int size);
+{
+  int temp, i, j;
+  for ( i = 0; i < size; i++)
+    {
+      for (j = i; j < size; j++)
+	{
+	  if (tab[i] > tab[j])
+	    {
+	    temp = tab[i];
+	    tab[i] = tab[j];
+	    tab[j] = temp;
+	    }
+	}
+    } 
+}
+
+int main (int argc, char *argv[])
+{
+  char tab[3][15] = {
+“not prepared !”,
+“You”,
+“are”
+};
+char tab2[5][5] = {
+“ab”,
+“ba”,
+“ca”,
+“Da”,
+“aE”
+};
+char *f[3] = {
+tab[0], tab[1], tab[2]
+};
+char *f2[5] = {
+tab2[0], tab2[1], tab2[2], tab2[3], tab2[4]
+};
+my_show_array(f, 3);
+my_show_array(f2, 5);
+
+  return (0);
+}

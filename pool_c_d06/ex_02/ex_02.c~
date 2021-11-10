@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <unistd.h>
+
+void my_show_adres (int *adresse)
+{
+  printf ("%p", adresse);
+}
+int main()
+{
+  int adresse = 18;
+  printf("%p\n", &adresse);
+  
+  return (0);
+}

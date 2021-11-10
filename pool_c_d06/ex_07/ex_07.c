@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+void my_reset_ptr(char **ptr)
+{
+   free (*ptr);
+   *ptr = NULL;
+}
+/*
+int main()
+{
+  char *str;
+  str = strdup ("Please, let me free!");
+  my_reset_ptr(&str);
+  return (0);
+}
+*/

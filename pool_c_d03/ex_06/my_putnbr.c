@@ -1,0 +1,52 @@
+#include <unistd.h>
+
+int my_putchar(char c)
+{
+  write(1,&c,1);
+  return(0);
+}
+ 
+void my_putnbr(int nb)
+{
+  int i, mod, n;
+
+  if(nb < 0)
+    {
+      my_putchar('-');
+      nb = nb * -1;
+    }
+
+  if (nb < 10)
+    {
+      my_putchar('0' + nb);
+    }
+
+  else
+    {
+
+      i = 10;
+   while ((nb /i) > 10)
+     {
+       i = i * 10;
+     }
+
+  while (i  >= 10)
+    {
+      mod = nb % i;
+      n = (nb-mod)/i;
+      my_putchar('0'+ n );
+      i = i / 10;
+      nb = mod;
+    }
+  }
+  my_putchar('0' + nb);
+  
+}
+
+int main ()
+{
+  my_putnbr(42);
+  my_putnbr(-42);
+  return (0);
+}
+

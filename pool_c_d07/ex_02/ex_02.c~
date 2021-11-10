@@ -1,0 +1,24 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+
+
+int main(int argc, char* argv[])
+{
+ 
+  int nombre = atoi( *argv);
+  if (nombre > 0 )
+   {
+       for (int i = 1; i < nombre; i++)
+    {
+      printf("Hello\n", argv[i]);
+    }
+   }
+  
+  else
+    {
+      printf("Error\n");
+    }
+
+  return (0);
+}

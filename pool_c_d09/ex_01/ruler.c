@@ -1,0 +1,70 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include "rubiks.h"
+int my_putchar(char c);
+
+void my_putstr(char *str);
+
+void my_putnbr(int n1);
+
+void free_tab(int **table);
+
+void print_tab(int **table)
+{
+  
+ for (int i = 0; i < 4; i++)
+     {
+     my_putstr("-----------------\n|");
+        for ( int j = 0; j < 4; j++)
+        {
+	     my_putstr(" ");
+	     my_putnbr(table[i][j]);
+	     my_putstr(" ");
+	       my_putstr("|");
+	     
+	if ( j == 3)
+	  {
+	    my_putstr("\n");
+	  }
+         }
+       }
+	 my_putstr("-----------------\n\n");
+       
+}
+/*
+int main (int argc, char *argv[])
+{
+   int **tab = malloc(sizeof(int*) * 4);
+    for (int k = 0; k < 4; k++)
+      {
+	tab[k] = malloc(sizeof(int) * 4);
+      }
+  for (int i = 0; i < 4; i++)
+    {
+      for (int j = 0; j < 4; j++)
+	{
+	  tab[i][j]=0;
+	}
+    }
+   for (int i = 0; i < 2; i++)
+      {
+    tab[i][0] = 0;
+    tab[i][1] = 0;
+    tab[i][2] = 1;
+    tab[i][3] = 1;
+      }
+    for(int i = 2; i < 4; i++)
+      {
+	tab[i][0] = 2;
+	tab[i][1] = 2;
+	tab[i][2] = 3;
+	tab[i][3] = 3;
+	} 
+
+	     print_tab(tab); 
+	     free_tab(tab);
+
+  return (0);
+}
+
+*/

@@ -1,0 +1,26 @@
+#include <unistd.h>
+#include <stdlib.h>
+#include <stdio.h>
+
+
+int my_up(int *nbr)
+{
+  int *array = NULL;
+  array = malloc (2 * sizeof(int));
+  
+  array[0] = *nbr;
+  array[1] = *nbr * 2;
+
+return (*array);
+}
+
+int main()
+{
+  int nombre = 5;
+  my_up(nombre);
+  for  (int i = 0; i < 2; i++)
+    {
+      printf("%d", my_up(nombre));
+    }
+  return (0);
+}

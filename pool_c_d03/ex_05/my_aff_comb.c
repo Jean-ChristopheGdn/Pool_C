@@ -1,0 +1,35 @@
+#include <unistd.h>
+void my_putchar(char c)
+{
+  write(1, &c, 1);
+}
+void my_aff_comb()
+{
+  int a, b, c;
+
+    for(a=48; a<=55; a++)
+    {
+        for(b=a+1; b<=56; b++)
+        {
+            for(c=b+1; c<=57; c++) 
+            {
+	        my_putchar(a);
+                my_putchar(b);
+                my_putchar(c);
+		if ( a < 55)
+		my_putchar(',');
+	   
+    		my_putchar(' ');
+              
+            }
+        }
+    }
+  
+}
+/*
+  int main()
+  {
+    my_aff_comb();
+    return (0);
+  }
+*/

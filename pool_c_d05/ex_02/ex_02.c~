@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <unistd.h>
+int strlen(char *str)
+{
+  int i = 0;
+  while (str[i] != '\0')
+    {
+      i= i+1;
+    }
+  return (i);
+}
+
+char *my_revstr(char *str)
+{
+  int i = 0;
+  char temp;
+  int taille = (strlen(str) -1);
+  while (i < taille/2)
+    {
+      temp = str[i];
+      str[i] = str[taille-i];
+      str[taille-i] = temp;
+      i= i+1;
+    }
+
+  return (str);
+}
+
+int main (int argc, char *argv[])
+{
+  char str[6] = "Hello";
+  printf("%s\n", my_revstr(str));
+  return (0);
+}

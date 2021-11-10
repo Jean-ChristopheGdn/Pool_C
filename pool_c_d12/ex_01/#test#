@@ -1,0 +1,42 @@
+void print_unique(int *tab, int size)
+{
+    int a = 0;
+    int b;
+    int c;
+
+    int x;
+    int count = 0;
+
+
+    while (a < size)
+    {
+        x = tab[a];
+        b = 0;
+        c = 0;
+
+        while (b < size)
+        {
+            if(tab[b] == x)
+            {
+                c++;
+            }
+
+            b++;
+        }
+
+    if(c == 1)
+    {
+        if(count > 0)
+        {
+            printf(",");
+        }
+
+        printf("%d", x);
+        count++;
+    }
+
+    a++;
+    }
+
+    printf ("\n");
+}

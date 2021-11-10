@@ -1,0 +1,20 @@
+int** pascal_tr(int size)
+{
+  int **result = malloc(size * sizeof(int*));
+
+  for (int i = 0; i < size; i++)
+    {
+      int *line = malloc((i+1) * sizeof(int));
+      for (int j = 0; j <= i; j++)
+    {
+      if (i == j || j == 0)
+      {
+        line[j] = 1;
+      } else {
+        line[j] = result[i-1][j-1] + result[i-1][j];
+      }
+    }
+      result[i] = line; 
+    }
+  return result;
+}

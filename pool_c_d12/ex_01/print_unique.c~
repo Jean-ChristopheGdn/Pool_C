@@ -1,0 +1,58 @@
+#include <unistd.h>
+
+int my_putchar(char c)
+{
+  write(1,&c,1);
+}
+
+void my_putstr(char *str)
+{
+int i = 0;
+    while(str[i] != '\0')
+    {
+    my_putchar(str[i]);
+        i++;
+    }
+}
+
+void my_putnbr(int nombre)
+
+{
+  int k;
+  long n = nombre;
+ 
+  if (n < 0)
+    {
+      my_putchar('-');
+      n = n * (-1);
+    }
+    
+  if (n >= 0)
+  {
+      if (n >= 10)
+	{
+	  k = (n % 10);
+      n = (n - k) / 10;
+	  my_putnbr(n);
+	  my_putchar(48 + k);
+     }
+     
+      else
+        my_putchar(48 + n % 10);
+   }
+}
+
+void print_unique(int * array, int size)
+{
+  for(int i = 0; i <= size; i++)
+    {
+      my_putchar(array[i]); 
+    }
+}
+
+int main (int argc, char* argv[])
+{
+  int tab[] = {0, 0, 2, 3, 4, 3, 6, 1};
+  print_unique(tab, 8);
+  return (0);
+}
